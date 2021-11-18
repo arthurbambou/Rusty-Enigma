@@ -3,30 +3,45 @@
 version = 3
 
 [[package]]
+name = "autocfg"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+
+[[package]]
 name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
-name = "cafebabe"
-version = "0.4.2"
+name = "hashbrown"
+version = "0.11.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4734e4e2361180d7c1ab724db08983d3be55079e94b93a8d535fdece1b42798c"
+checksum = "ab5ef0d4909ef3724cc8cce6ccc8572c5c817592e9285f5464f8e86f8bd3726e"
+
+[[package]]
+name = "indexmap"
+version = "1.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc633605454125dec4b66843673f01c7df2b89479b32e0ed634e43a91cff62a5"
 dependencies = [
- "bitflags",
- "cesu8",
+ "autocfg",
+ "hashbrown",
 ]
 
 [[package]]
-name = "cesu8"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d43a04d8753f35258c91f8ec639f792891f748a1edbd759cf1dcea3382ad83c"
+name = "noak"
+version = "0.4.0-alpha.3"
+source = "git+https://gitlab.com/frozo/noak#3686701dcbb1ea00f777e1ecdd0d07062e17da95"
+dependencies = [
+ "bitflags",
+ "indexmap",
+]
 
 [[package]]
 name = "rusty-enigma"
 version = "0.1.0"
 dependencies = [
- "cafebabe",
+ "noak",
 ]
