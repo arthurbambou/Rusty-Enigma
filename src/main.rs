@@ -4,10 +4,10 @@ use noak::error::DecodeError;
 use noak::reader::Class;
 
 fn main() {
-    let mut file = File::open("./zz.class").unwrap();
+    let mut file = File::open("./yarn-1.8.9/class_4.class").unwrap();
     let mut bytes = Vec::new();
     file.read_to_end(&mut bytes).unwrap();
-    println!("Parsing zz.class ...");
+    println!("Parsing class_4.class ...");
     // match cafebabe::parse_class(&bytes) {
     //     Ok(class) => parse_class(class),
     //     Err(e) => println!("Error: {}", e),
@@ -22,6 +22,12 @@ fn main() {
 }
 
 fn parse_class(mut class: Class) -> Result<(), DecodeError> {
+    println!("Constants");
+    let pool = class.pool()?;
+
+    for constant in pool.iter() {
+        println!("\t- {:#?}", constant)
+    }
 
     println!("Fields");
     for field in class.fields()? {
