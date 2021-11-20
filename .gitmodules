@@ -1,0 +1,3 @@
+[submodule "yarn-1.8.9"]
+	path = yarn-1.8.9
+	url = https://github.com/Legacy-Fabric/yarn
